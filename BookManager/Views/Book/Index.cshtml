@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@model List<BookManager.Models.Book>
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1>Nhựt Tiến</h1>
+    </section>
+
+    <form method="post" action="@Url.Action("AddNewBook", "Book")">
+        <input type="text" name="bookName" placeholder="điền tên sách vào" />
+        <button type="submit" name="submit">SUBMIT</button>
+    </form>
+
+    <table class="table" border="1">
+        <thead >
+            <tr>
+                <th>BookID</th>
+                <th>BookName</th>
+            </tr>
+            
+        </thead>
+
+        <tbody>
+
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.bookID</td>
+                        <td>@item.title</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+</main>
+

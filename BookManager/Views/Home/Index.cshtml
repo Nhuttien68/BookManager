@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model  List<BookManager.Models.Book>
+<main>
+  <p>Nhựt Tiến</p>
+  <form method="post" action="@URL">
+      <input type="text" name="bookName" placeholder="Điền tên sách vào" />
+      <button type="submit"> SUBMIT</button>
+  </form>
+    
+</main>
